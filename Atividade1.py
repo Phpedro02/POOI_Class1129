@@ -9,7 +9,7 @@ class Produto:
         quantidade += acrescimo
 
     def imprimeProduto(self):
-        print("Codigo: ", codigo, "Descricao: ", descricao, "Preço: ", preco, "Quantidade: ", quantidade)
+        print("Codigo: ", self.__codigo, "Descricao: ", self.__descricao, "Preço: ", self.__preco, "Quantidade: ", self.__quantidade)
 
     @property
     def codigo(self):
@@ -44,14 +44,14 @@ class Produto:
         self.__quantidade = quantidade
 
 class Livro(Produto):
-    def __init__(self, autor, numeroPaginas):
-        Produto .__init__ (validade, codigo, descricao, preco, quantidade)
+    def __init__(self, autor, numeroPaginas, codigo, descricao, preco, quantidade):
+        Produto .__init__ (codigo, descricao, preco, quantidade)
         self.__autor = autor
         self.__numeroPaginas = numeroPaginas
 
 class PecaCarro(Produto):
-    def __init__(self, tipoCarro, marca):
-        Produto .__init__ (validade, codigo, descricao, preco, quantidade)
+    def __init__(self, tipoCarro, marca, codigo, descricao, preco, quantidade):
+        Produto .__init__ (codigo, descricao, preco, quantidade)
         self.__tipoCarro = tipoCarro
         self.__marca = marca
 
@@ -59,6 +59,12 @@ class Alimenticio(Produto):
     def __init__(self, validade, codigo, descricao, preco, quantidade):
         Produto .__init__ (validade, codigo, descricao, preco, quantidade)
         self.__validade = validade
+
+class main():
+    livro = Livro("Pedro", 15, 1, "Harry potter", 30.5, 1)
+    Peca = PecaCarro("Chevrolet chevette", "Chevrolet", 2, "Carro para Ruas", "10.000", "1")
+    alimenticio = ("27/11", 3, "Maçã", 22.3, 5)
+
         
         
         
